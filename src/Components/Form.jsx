@@ -8,12 +8,10 @@ const Form = (props) => {
     
       const handleSubmit = (e) => {
         e.preventDefault();
-        props.setElements(
-          [
-            ...props.elements[0].items,
-            [{id:'elemento-8',text: props.inputText}],
-          ]
-        )
+
+        props.elements.lists[0].items.push({id:`element-${Math.random() * 1000}`, text: props.inputText});
+
+        props.setElements({...props.elements});
       }
     
     return (
