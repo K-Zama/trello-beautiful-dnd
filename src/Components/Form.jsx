@@ -6,20 +6,29 @@ const Form = (props) => {
         props.setInputText(e.target.value);
       }
     
-      const handleSubmit = (e) => {
+    const addElement = (e) => {
         e.preventDefault();
 
         props.elements.lists[0].items.push({id:`element-${Math.random() * 1000}`, text: props.inputText});
 
         props.setElements({...props.elements});
-      }
+    }
+
+    const addList = (e) => {
+        e.preventDefault();
+
+        props.elements.lists.push({columnId: Math.random() * 1000, items: []});
+
+        props.setElements({...props.elements});
+    }
     
     return (
         <div className="row">
             <div className="col">
-                <form onSubmit={handleSubmit}>
+                <form>
                     <input type="text" onChange={handleChange}/>
-                    <button>Añadir</button>
+                    <button onClick={addElement}>Añadir</button>
+                    <button onClick={addList}>Añadir Lista</button>
                 </form>
             </div>
         </div>

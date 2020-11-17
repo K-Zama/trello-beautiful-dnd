@@ -33,13 +33,14 @@ function App() {
     setElements({...newElements});
   }
 
+
   return (
-    <div className="container contenedor">
+    <div className="container-fluid contenedor">
       <Form inputText={inputText} setInputText={setInputText} elements={elements} setElements={setElements}/>
       <DragDropContext onDragEnd={onDragEnd}>
         <div className="row fila d-flex justify-content-around align-items-center">
             {elements.lists.map((col, i) => (
-              <List col={col} i={i} inputText={inputText}/>
+              <List col={col} i={i} key={i} inputText={inputText} elements={elements} setElements={setElements}/>
             ))}
         </div>
       </DragDropContext>
@@ -48,3 +49,5 @@ function App() {
 }
 
 export default App;
+
+//Añadir botón para añadir lists igual que hemos añadido las tareas
