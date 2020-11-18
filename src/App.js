@@ -1,8 +1,9 @@
-import './App.css';
+import './App.scss';
 import React, {useState} from 'react';
-import {DragDropContext} from 'react-beautiful-dnd';
-import List from './Components/List';
-import Form from './Components/Form';
+import {DragDropContext, Droppable} from 'react-beautiful-dnd';
+import List from './Components/Lists/List';
+import Form from './Components/Form/Form';
+import logo from './Components/img/logo.svg';
 
 const reorder = (list, startColumn, endColumn, startIndex, endIndex) => {
   const newList = [...list];
@@ -36,6 +37,7 @@ function App() {
 
   return (
     <div className="container-fluid contenedor">
+      <img src={logo} alt="logo" className="logo"/>
       <Form inputText={inputText} setInputText={setInputText} elements={elements} setElements={setElements}/>
       <DragDropContext onDragEnd={onDragEnd}>
         <div className="row fila d-flex justify-content-around align-items-center">
@@ -49,5 +51,3 @@ function App() {
 }
 
 export default App;
-
-//Añadir botón para añadir lists igual que hemos añadido las tareas

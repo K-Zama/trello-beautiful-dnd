@@ -1,0 +1,13 @@
+@import '../../colors.scss';
+.elemento {
+    background: $BlueLight;
+    border: none;
+    border-radius: 0.5em;
+    color: rgb(31, 75, 83);
+    font-weight: 600;
+    padding: 1em;
+    cursor: pointer;
+    p {
+        font-size: 1vw;
+    }
+}
