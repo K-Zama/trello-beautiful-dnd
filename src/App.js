@@ -16,9 +16,9 @@ function App() {
   const [inputText, setInputText] = useState("");
   const [elements, setElements] = useState({
     lists: [
-      {columnId: 1, items: [],},
-      {columnId: 2, items: [],},
-      {columnId: 3, items: [],},
+      {columnId: 1, items: [], title: "ToDo"},
+      {columnId: 2, items: [], title: "In progress"},
+      {columnId: 3, items: [], title: "Finished"},
       ]
     });
   

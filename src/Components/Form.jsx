@@ -17,7 +17,7 @@ const Form = (props) => {
     const addList = (e) => {
         e.preventDefault();
 
-        props.elements.lists.push({columnId: Math.random() * 1000, items: []});
+        props.elements.lists.push({columnId: Math.random() * 1000, items: [], title: "Añade un título a tu lista"});
 
         props.setElements({...props.elements});
     }

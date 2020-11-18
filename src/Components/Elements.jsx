@@ -5,9 +5,14 @@ const Elements = (props) => {
     
     const handleRemove = (e) => { 
         e.preventDefault();
-        props.setElements(props.elements.lists[0].items.filter(task => task.id !== props.draggableId));
-        //console.log(props.draggableId);
-        //props.setElements(props.elements.lists[0].items.filter(element => {element.id !== props.draggableId}));
+        /*console.log(props.el.id);
+        console.log(props.draggableId);*/
+
+
+        props.elements.lists.items = props.elements.lists.filter(list => list.items).filter(item => console.log(item.id !== props.draggableId))
+
+        props.setElements({...props.elements.lists});
+
     }
 
    
