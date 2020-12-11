@@ -6,11 +6,10 @@ const Elements = (props) => {
     
     const handleRemove = (e) => { 
         e.preventDefault();
-        /*props.elements.lists[0].items = props.elements.lists[0].items.filter(item => item.id !== props.draggableId);
-        props.elements.lists[1].items = props.elements.lists[1].items.filter(item => item.id !== props.draggableId);
-        props.elements.lists[2].items = props.elements.lists[2].items.filter(item => item.id !== props.draggableId);*/
 
-        props.elements.lists = props.elements.lists.map(list => list.items.filter(item => item.id !== props.draggableId));
+        for (const list of props.elements.lists) {
+            list.items = list.items.filter(item => item.id !== props.draggableId);
+        }
 
         props.setElements({...props.elements});
     }
